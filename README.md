@@ -8,3 +8,5 @@ I'll keep a copy of all major talks I give from now and on in this directory. Th
 
 - a sentiment analysis of my own tweets (@McDonnellJack)
 
+- a project looking at risk predictors of need for phototherapy in the NICU
+
