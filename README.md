@@ -10,3 +10,5 @@ I'll keep a copy of all major talks I give from now and on in this directory. Th
 
 - a project looking at risk predictors of need for phototherapy in the NICU
 
+- a project looking at short-term outcomes (death, length of stay) in a cohort of neonates with HIE
+
