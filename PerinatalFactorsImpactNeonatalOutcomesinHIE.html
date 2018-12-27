@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<style>
+/* CSS for Markstat 2.0 using Pandoc 2.0 */
+body{padding:14px 28px;}
+body, table {font-family: Helvetica, Arial, Sans-serif; font-size: 14px;}
+h1, h2, h3, h4 {font-weight: normal; color: #3366cc}
+h1 {font-size: 200%;}
+h2 {font-size: 150%;}
+h3 {font-size: 120%;}
+h4 {font-size: 100%; font-weight:bold}
+img.center {display:block; margin-left:auto; margin-right:auto}
+.small{font-size:8pt;}
+a {color: black;}
+a:visited {color: #808080;}
+a.plain {text-decoration:none;}
+a.plain:hover {text-decoration:underline;}
+.em {font-weight:bold;}
+pre, code {font-family: "lucida console", monospace;}
+pre.stata {font-size:13px; line-height:13px;}
+pre {padding:8px; border:1px solid #c0c0c0; border-radius:8px; background-color:#fdfdfd;}
+code {color:#3366cc; background-color:#fafafa;}
+pre code { color:black; background-color:white}
+/* Added for Pandoc */
+figure > img, div.figure > img {display:block; margin:auto}
+figcaption, p.caption {text-align:center; font-weight:bold; color:#3366cc;}
+h1.title {text-align:center; margin-bottom:0}
+p.author, h2.author {font-style:italic; text-align:center;margin-top:4px;margin-bottom:0}
+p.date, h3.date {text-align:center;margin-top:4px; margin-bottom:0}
+/* Tables*/
+table { margin:auto; border-collapse:collapse; }
+table caption { margin-bottom:1ex;}
+th, td { padding:4px 6px;}
+thead tr:first-child th {border-top:1px solid black; padding-top:6px}
+thead tr:last-child  th {padding-bottom:6px}
+tbody tr:first-child td {border-top:1px solid black; padding-top:6px}
+tbody tr:last-child  td {padding-bottom:6px;}
+table tbody:last-child tr:last-child td {border-bottom:1px solid black;}
+</style>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>PerinatalFactorsImpactNeonatalOutcomesinHIE</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="perinatal-factors-impact-neonatal-outcomes-in-hie">Perinatal Factors Impact Neonatal Outcomes in HIE</h1>
+<h3 id="john-mcdonnell-md">John McDonnell, MD</h3>
+<h5 id="background">Background</h5>
+<p>Hypoxic-ischemic encephalopathy (HIE) is a disease with considerable neonatal morbidity and mortality. The disease has an incidence ranging from 2 to 9 per 1000 term births and presents as neonatal encephalopathy and seizures in term or late preterm infants (35 weeks or greater estimated gestational age). Clinically, these infants often have a difficult birthing process as reflected by low APGAR scores, significant acid/base derangements on umbilical cord blood gas measurement, and abnormal neurological exams at birth or shortly thereafter. Babies with mild HIE can be clinically observed, but cases with moderate to severe HIE require therapeutic hypothermia, ideally initiated within the first 6 hours of life and continued for a full 72 hours. Therapeutic hypothermia is thought to work by reducing metabolic stress to the fragile infant as well as decreasing oxygen free-radical damage, and it has been shown in the literature to improve developmental outcomes in these infants with a more significant phenotype of HIE.</p>
+<p>A broad range of factors, both maternal and neonatal, has been associated with development of HIE. Any process negatively affecting the delivery of oxygen to the developing fetal/neonatal brain can be considered a potential precipitant of this disease. Often the underlying issue leading to HIE is reflected only indirectly through clinical surrogates. For example, fetal distress can be reflected by abnormal fetal heart tracing and meconium passage in utero – often with no clear cause. In other cases, the underlying issue is more obvious, such as in cases of a catastrophic uterine rupture or maternal placental abruption necessitating an emergent delivery. Still other cases seem to stem from difficulty with fetal extraction in the delivery process, as in the case of shoulder dystocia or fetal breech positioning. Whatever the presumed cause of the HIE, the results feed into a common pathway involving neonatal encephalopathy often accompanied by seizures. In the early newborn period, babies diagnosed with HIE can develop significant organ-system damage and can even die. Those that survive the initial hospitalization often will have developmental delay, cerebral palsy, or both.</p>
+<p>Many studies have been performed examining factors that seem to lead to the development of HIE. However, there is a gap in the literature with respect to how these various factors might impact early neonatal outcomes. For example, do infants with history of fetal malpresentation do worse than those without? What about babies with documented abnormal heart rates prior to delivery? Lastly, once an infant is diagnosed with HIE, how does the development of a secondary issue like sepsis or hypoglycemia affect their outcome? This study attempts to delve into these and similar questions. I aim to examine the impact of various maternal and neonatal factors on early outcomes of infants with HIE, specifically 1) <strong>neonatal morbidity</strong> and 2) <strong>neonatal mortality</strong>. The morbidity outcome is difficult to measure directly but can be viewed obliquely using hospital length of stay as a surrogate. Mortality can be approached head-on. I hypothesize that different factors associated with HIE exert differential effects on these outcomes, and that these differential effects can be measured (albeit imperfectly) and even predicted.</p>
+<h5 id="methods">Methods</h5>
+<h6 id="study-design">Study Design</h6>
+<p>I examined outcomes of neonatal mortality and neonatal intensive care unit (NICU) length of stay (LOS) for babies diagnosed with HIE. Neonatal mortality was defined as death during initial hospitalization after birth and LOS was considered to be the number of days during the initial hospitalization (no readmissions were considered).</p>
+<p>To perform this analysis, I used the HCUP (Healthcare Cost and Utilization Project) 2012 Kids’ Inpatient Database. The database provided information on demographic characteristics of infants, inpatient mortality, LOS, and diagnoses and procedures associated with each infant. The following variables were derived:</p>
+<p><strong>Variables Of Interest:</strong></p>
+<table>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 24%" />
+<col style="width: 29%" />
+<col style="width: 24%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th style="text-align: center;">Type, # Levels</th>
+<th style="text-align: center;">Description</th>
+<th style="text-align: right;">ICD9 Codes Used (if applicable)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>HIE</td>
+<td style="text-align: center;">factor, 2</td>
+<td style="text-align: center;">was neonate diagnosed with HIE</td>
+<td style="text-align: right;">7680-7689, 34830, 34839, 77901</td>
+</tr>
+<tr class="even">
+<td>Race</td>
+<td style="text-align: center;">factor, 4</td>
+<td style="text-align: center;">white, black, hispanic, other</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td>Female</td>
+<td style="text-align: center;">factor, 2</td>
+<td style="text-align: center;">female?</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td>Hospital Region</td>
+<td style="text-align: center;">factor, 4</td>
+<td style="text-align: center;">Northeast, Midwest, South, West</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td>Insurance Payer</td>
+<td style="text-align: center;">factor, 3</td>
+<td style="text-align: center;">Medicaid, Private, Other</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td>C_section</td>
+<td style="text-align: center;">factor, 2</td>
+<td style="text-align: center;">born via c_section?</td>
+<td style="text-align: right;">V3001</td>
+</tr>
+<tr class="odd">
+<td>Fetal Heart Rate</td>
+<td style="text-align: center;">factor, 2</td>
+<td style="text-align: center;">abnormal heart rate during labor?</td>
+<td style="text-align: right;">76381-76383</td>
+</tr>
+<tr class="even">
+<td>Hypoglycemia</td>
+<td style="text-align: center;">factor, 2</td>
+<td style="text-align: center;">was neonate ever diagnosed with hypoglycemia?</td>
+<td style="text-align: right;">7756</td>
+</tr>
+<tr class="odd">
+<td>Gestational Age</td>
+<td style="text-align: center;">factor, 3</td>
+<td style="text-align: center;">term, late preterm (35-36 weeks), postterm (42+ weeks)</td>
+<td style="text-align: right;">76528-76529, 7662, 76621-76622</td>
+</tr>
+<tr class="even">
+<td>Seizures</td>
+<td style="text-align: center;">factor, 2</td>
+<td style="text-align: center;">was neonate ever diagnosed with seizures?</td>
+<td style="text-align: right;">3450-34591, 7803-78039, 7790</td>
+</tr>
+<tr class="odd">
+<td>Maternal Inflammatory Disease</td>
+<td style="text-align: center;">factor, 2</td>
+<td style="text-align: center;">did mother of patient have chorioamnionitis or premature rupture of membranes?</td>
+<td style="text-align: right;">7627, 7611</td>
+</tr>
+<tr class="even">
+<td>Maternal Hypertension</td>
+<td style="text-align: center;">factor, 2</td>
+<td style="text-align: center;">was mother of patient diagnosed with hypertension affecting pregnancy?</td>
+<td style="text-align: right;">7600</td>
+</tr>
+<tr class="odd">
+<td>Fetal Malpresentation</td>
+<td style="text-align: center;">factor, 2</td>
+<td style="text-align: center;">was neonate’s delivery affected by breech positioning or shoulder dystocia? (note: *these diagnoses are present in HCUP as "newborn affected by __" codes*)</td>
+<td style="text-align: right;">7600</td>
+</tr>
+<tr class="even">
+<td>CPR</td>
+<td style="text-align: center;">factor, 2</td>
+<td style="text-align: center;">did infant require early CPR?</td>
+<td style="text-align: right;">9960 (procedure)</td>
+</tr>
+<tr class="odd">
+<td>Therapeutic Hypothermia</td>
+<td style="text-align: center;">factor, 2</td>
+<td style="text-align: center;">did infant receive early therapeutic hypothermia?</td>
+<td style="text-align: right;">9981 (procedure)</td>
+</tr>
+<tr class="even">
+<td>Sepsis</td>
+<td style="text-align: center;">factor, 2</td>
+<td style="text-align: center;">did infant receive diagnosis of sepsis or serious bacterial infection? (note: <em>cases of observation for suspected infection deliberately excluded as these infants do not have true disease</em>)</td>
+<td style="text-align: right;">77181, 7712,77189, 78552, 038-039, 99591-99592, 3202, 3229, 04149</td>
+</tr>
+<tr class="odd">
+<td>Transfer</td>
+<td style="text-align: center;">factor, 2</td>
+<td style="text-align: center;">patient transferred in from another facility?</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td>LOS</td>
+<td style="text-align: center;">continuous</td>
+<td style="text-align: center;">length of initial inpatient stay (days)</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td>Death</td>
+<td style="text-align: center;">factor, 2</td>
+<td style="text-align: center;">did infant die during initial hospitalization?</td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+<p>Conceptually, above variables (excluding the two outcome variables and the HIE variable itself, which forms the basis for the cohort) can be grouped into several overarching categories:</p>
+<ol type="1">
+<li><strong>maternal</strong> factors (for example - maternal hypertension, maternal inflammatory disease)</li>
+<li><strong>intrapartum</strong> factors (for example - fetal malpresentation, abnormal fetal heart rate)</li>
+<li><strong>neonatal</strong> factors (for example - sepsis, need for therapeutic hypothermia, need for CPR, transfer status)</li>
+</ol>
+<p>It is important to remember that ALL of the neonates in the cohort I am considering had some form of HIE, but each differed in the balance of these various maternal, intrapartum, and neonatal factors. An attempt to measure the relative importance of the various factors in the outcomes of death and LOS forms the motivation for my analysis.</p>
+<p><strong>Table 1</strong></p>
+<pre class='stata'>  ┌─────────────────────────────────────────────────────────┐
+  │ factor                                        N_1   m_1 │
+  ├─────────────────────────────────────────────────────────┤
+  │ Patient's race                              2,153     0 │
+  ├─────────────────────────────────────────────────────────┤
+  │ Patient female?                             2,153     0 │
+  ├─────────────────────────────────────────────────────────┤
+  │ Region of hospital                          2,153     0 │
+  ├─────────────────────────────────────────────────────────┤
+  │ Insurance type                              2,153     0 │
+  ├─────────────────────────────────────────────────────────┤
+  │ Born via C-section?                         2,153     0 │
+  ├─────────────────────────────────────────────────────────┤
+  │ Neonatal hypoglycemia?                      2,153     0 │
+  ├─────────────────────────────────────────────────────────┤
+  │ Estimated gestational age                   2,153     0 │
+  ├─────────────────────────────────────────────────────────┤
+  │ Neonatal seizures?                          2,153     0 │
+  ├─────────────────────────────────────────────────────────┤
+  │ Maternal inflammatory disorder?             2,153     0 │
+  ├─────────────────────────────────────────────────────────┤
+  │ Maternal hypertension?                      2,153     0 │
+  ├─────────────────────────────────────────────────────────┤
+  │ Fetal malpresentation in labor?             2,153     0 │
+  ├─────────────────────────────────────────────────────────┤
+  │ Neonate received CPR on first day?          2,153     0 │
+  ├─────────────────────────────────────────────────────────┤
+  │ Neonate started on hypothermia first day?   2,153     0 │
+  ├─────────────────────────────────────────────────────────┤
+  │ Neonate diagnosed with sepsis?              2,153     0 │
+  ├─────────────────────────────────────────────────────────┤
+  │ Patient transferred in?                     2,144     9 │
+  ├─────────────────────────────────────────────────────────┤
+  │ Length of stay (days)                       2,153     0 │
+  ├─────────────────────────────────────────────────────────┤
+  │ Died during hospitalization                 2,152     1 │
+  └─────────────────────────────────────────────────────────┘
+   N_ ... #records used below,   m_ ... #records not used
+ 
+  ┌────────────────────────────────────────────────────────────────────────────────────────┐
+  │                                                                          Total         │
+  ├────────────────────────────────────────────────────────────────────────────────────────┤
+  │                                                                          N=2,153       │
+  ├────────────────────────────────────────────────────────────────────────────────────────┤
+  │ Patient's race                              White                        1,119 (52.0%) │
+  │                                             Black                        357 (16.6%)   │
+  │                                             Hispanic                     352 (16.3%)   │
+  │                                             Other                        325 (15.1%)   │
+  ├────────────────────────────────────────────────────────────────────────────────────────┤
+  │ Patient female?                             0                            1,216 (56.5%) │
+  │                                             1                            937 (43.5%)   │
+  ├────────────────────────────────────────────────────────────────────────────────────────┤
+  │ Region of hospital                          Northeast                    393 (18.3%)   │
+  │                                             Midwest                      463 (21.5%)   │
+  │                                             South                        689 (32.0%)   │
+  │                                             West                         608 (28.2%)   │
+  ├────────────────────────────────────────────────────────────────────────────────────────┤
+  │ Insurance type                              Medicaid                     1,095 (50.9%) │
+  │                                             Private                      878 (40.8%)   │
+  │                                             Other                        180 ( 8.4%)   │
+  ├────────────────────────────────────────────────────────────────────────────────────────┤
+  │ Born via C-section?                         0                            1,594 (74.0%) │
+  │                                             1                            559 (26.0%)   │
+  ├────────────────────────────────────────────────────────────────────────────────────────┤
+  │ Neonatal hypoglycemia?                      0                            2,026 (94.1%) │
+  │                                             1                            127 ( 5.9%)   │
+  ├────────────────────────────────────────────────────────────────────────────────────────┤
+  │ Estimated gestational age                   term                         1,865 (86.6%) │
+  │                                             late preterm (35-36 weeks)   188 ( 8.7%)   │
+  │                                             postterm                     100 ( 4.6%)   │
+  ├────────────────────────────────────────────────────────────────────────────────────────┤
+  │ Neonatal seizures?                          0                            1,502 (69.8%) │
+  │                                             1                            651 (30.2%)   │
+  ├────────────────────────────────────────────────────────────────────────────────────────┤
+  │ Maternal inflammatory disorder?             0                            2,099 (97.5%) │
+  │                                             1                            54 ( 2.5%)    │
+  ├────────────────────────────────────────────────────────────────────────────────────────┤
+  │ Maternal hypertension?                      0                            2,128 (98.8%) │
+  │                                             1                            25 ( 1.2%)    │
+  ├────────────────────────────────────────────────────────────────────────────────────────┤
+  │ Fetal malpresentation in labor?             0                            2,062 (95.8%) │
+  │                                             1                            91 ( 4.2%)    │
+  ├────────────────────────────────────────────────────────────────────────────────────────┤
+  │ Neonate received CPR on first day?          0                            2,078 (96.5%) │
+  │                                             1                            75 ( 3.5%)    │
+  ├────────────────────────────────────────────────────────────────────────────────────────┤
+  │ Neonate started on hypothermia first day?   0                            2,001 (92.9%) │
+  │                                             1                            152 ( 7.1%)   │
+  ├────────────────────────────────────────────────────────────────────────────────────────┤
+  │ Neonate diagnosed with sepsis?              0                            1,744 (81.0%) │
+  │                                             1                            409 (19.0%)   │
+  ├────────────────────────────────────────────────────────────────────────────────────────┤
+  │ Patient transferred in?                     0                            1,407 (65.6%) │
+  │                                             1                            737 (34.4%)   │
+  ├────────────────────────────────────────────────────────────────────────────────────────┤
+  │ Length of stay (days)                                                    6 (2-11)      │
+  ├────────────────────────────────────────────────────────────────────────────────────────┤
+  │ Died during hospitalization                 0                            2,059 (95.7%) │
+  │                                             1                            93 ( 4.3%)    │
+  └────────────────────────────────────────────────────────────────────────────────────────┘
+Data are presented as median (IQR) for continuous measures, and n (%) for categorical measures.
+</pre>
+<p>My study population was composed of newborns in the US diagnosed with HIE during their initial/birth hospitalization in the year 2012. I excluded all infants born before 35 weeks gestation, as whether such infants can even develop HIE is a matter of clinical debate. Any infants with metabolic disease were excluded, as well as infants with birth weight &lt; 2000g. Additional exclusion criteria were neonatal coagulopathy, complex congenital heart disease, major congenital malformations, imperforate anus, suspected neuromuscular disorders, and known lethal chromosomal disorders. (<em>Note that the above are <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3743149/" title="common exclusion criteria">common exclusion criteria</a> for neonatal therapeutic hypothermia.</em>) Of those infants who had received cooling therapy, I included both infants who started cooling therapy on day of birth and those who started the following day (in order to capture those born shortly before midnight). For infants who had received CPR, an indicator of a very difficult delivery process, I used a similar include/exclude test.</p>
+
+<p>In this analysis, I started with <code>05,902</code> neonates (representing all the neonates in the 2012 HCUP database with HIE, as described above). After the above exclusion criteria are applied, I was left with <code>02,153</code> neonates.</p>
+<p>The primary outcomes were inpatient length of stay and patient death during hospitalization. LOS was calculated by subtracting admission date from discharge date.</p>
+<h6 id="statistical-analysis">Statistical Analysis</h6>
+<p>Regression modeling was performed to estimate inpatient LOS. Due to nonparametric distribution of LOS in the data, a square root transform of the LOS variable was used. As can be seen from the output below, this type of transformation normalized the data more effectively than the traditional log transform and thus was therefore a more appropriate choice.</p>
+<pre class='stata'>Transformation         formula               chi2(2)       P(chi2)
+──────────────────────────────────────────────────────────────────
+cubic                  LOS^3                      .            .
+square                 LOS^2                      .            .
+identity               LOS                        .            .
+square root            sqrt(LOS)                  .        0.000
+log                    log(LOS)                   .            .
+1/(square root)        1/sqrt(LOS)                .            .
+inverse                1/LOS                      .            .
+1/square               1/(LOS^2)                  .            .
+1/cubic                1/(LOS^3)                  .            .
+
+(file gladderLOS.png written in PNG format)
+</pre>
+<figure>
+<img src="/Users/johnmcdonnell/Desktop/gladderLOS.png" alt="gladder" /><figcaption>gladder</figcaption>
+</figure>
+<p>Both standard linear multiple regression and robust regression approaches were used and performed similarly. Robust regression performed better on post-estimation analysis and was shown to conform more optimally to regression assumptions.</p>
+<pre class='stata'>. rreg sqrtLOS i.RACE FEMALE i.HOSP_REGION i.PAY1 fhr c_sec hypoglycemia i.gest_age seizure mat_inflamm HTN malpresent CPR_proc hypothermia_proc sepsis TRAN_IN if DIED==0
+
+   Huber iteration 1:  maximum difference in weights = .73247938
+   Huber iteration 2:  maximum difference in weights = .09595392
+   Huber iteration 3:  maximum difference in weights = .02493752
+Biweight iteration 4:  maximum difference in weights = .2932853
+Biweight iteration 5:  maximum difference in weights = .03251812
+Biweight iteration 6:  maximum difference in weights = .00781526
+
+Robust regression                               Number of obs     =      2,050
+                                                F( 22,      2027) =      25.83
+                                                Prob > F          =     0.0000
+
+────────────────────────────┬────────────────────────────────────────────────────────────────
+                    sqrtLOS │      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+────────────────────────────┼────────────────────────────────────────────────────────────────
+                       RACE │
+                     Black  │   .0488822   .0860091     0.57   0.570    -.1197933    .2175577
+                  Hispanic  │   .1900002   .0889013     2.14   0.033     .0156528    .3643477
+                     Other  │   .0273406   .0858283     0.32   0.750    -.1409804    .1956615
+                            │
+                     FEMALE │  -.0067081   .0584472    -0.11   0.909     -.121331    .1079148
+                            │
+                HOSP_REGION │
+                   Midwest  │  -.0897384   .0936373    -0.96   0.338    -.2733737    .0938969
+                     South  │  -.0262022   .0861727    -0.30   0.761    -.1951985     .142794
+                      West  │  -.1061466   .0894273    -1.19   0.235    -.2815258    .0692325
+                            │
+                       PAY1 │
+                   Private  │  -.0581368    .064777    -0.90   0.370    -.1851733    .0688996
+                     Other  │   -.110005   .1101684    -1.00   0.318    -.3260602    .1060501
+                            │
+                        fhr │  -.2146723   .1796073    -1.20   0.232    -.5669064    .1375619
+                  c_section │  -.2895695   .0737773    -3.92   0.000    -.4342566   -.1448823
+               hypoglycemia │   .2322592   .1241664     1.87   0.062    -.0112479    .4757662
+                            │
+                   gest_age │
+late preterm (35-36 weeks)  │    .619129   .1035345     5.98   0.000     .4160838    .8221742
+                  postterm  │  -.0075656   .1370308    -0.06   0.956    -.2763015    .2611703
+                            │
+                    seizure │   .7372076   .0649801    11.35   0.000     .6097729    .8646424
+                mat_inflamm │   .3679752    .182867     2.01   0.044     .0093483     .726602
+                        HTN │    .430895   .2883483     1.49   0.135     -.134595     .996385
+                 malpresent │  -.1535203   .1442429    -1.06   0.287       -.4364    .1293594
+                   CPR_proc │  -.7668231   .1674633    -4.58   0.000    -1.095241   -.4384049
+           hypothermia_proc │   .6371759   .1158539     5.50   0.000     .4099708     .864381
+                     sepsis │   .2222986   .0747976     2.97   0.003     .0756104    .3689869
+                    TRAN_IN │   .6842763   .0697662     9.81   0.000     .5474554    .8210972
+                      _cons │   1.854004    .097905    18.94   0.000     1.661999    2.046009
+────────────────────────────┴────────────────────────────────────────────────────────────────
+</pre>
+
+<p>The model, examining LOS in infants with HIE who did not die in their initial hospitalization, is statistically significant, with included terms explaining approximately <code>021</code>% of the variation in square root of LOS.</p>
+
+<p><strong>Factors Significantly <em>Increasing</em> Neonatal LOS</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Factor</th>
+<th>coefficient</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Hispanic ethnicity</td>
+<td><code>0.19000022</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">late preterm status</td>
+<td><code>0.61912896</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">neonatal seizures</td>
+<td><code>0.73720764</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">maternal inflammatory disease</td>
+<td><code>0.36797516</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">therapeutic hypothermia</td>
+<td><code>0.6371759</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">sepsis</td>
+<td><code>0.22229863</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">transferred in</td>
+<td><code>0.6842763</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Factors Significantly <em>Decreasing</em> Neonatal LOS</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Factor</th>
+<th style="text-align: left;">coefficient</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">c-section</td>
+<td style="text-align: left;"><code>-.28956945</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">neonatal CPR</td>
+<td style="text-align: left;"><code>-.76682308</code></td>
+</tr>
+</tbody>
+</table>
+<p>That the six factors listed above are associated with increased LOS makes sense. A baby born late preterm by definition is a baby born a bit early, so it should not be surprising that that baby might need more time in the hospital. This is even more the case if that baby also has seizures or requires hypothermia, both of which indicate more profound neonatal encephalopathy. The fact that a baby who is septic, or has a risk factor for sepsis due to maternal inflammatory disease, would have an increased LOS is also not surprising. Nor should it be surprising that an infant from an underserved ethnic group might stay in the hospital a bit longer.</p>
+<p>The fact that c-section delivery decreases LOS is expected. C-section is less physically traumatic for the baby than a vaginal birth, and thus might require less time in the hospital. It is puzzling, however, that infants who received CPR actually had a significantly decreased LOS. Sicker infants need CPR shortly after birth, so it would be natural to assume these infants might need to stay longer in the hospital. Perhaps some of the infants who did not get CPR in this cohort actually should have, and these infants did worse and stayed longer.</p>
+<p>Next, I performed logistic regression for the binary outcome of inpatient neonatal death. Here is the model with all covariates included.</p>
+<pre class='stata'>. logit DIED i.RACE FEMALE i.HOSP_REGION i.PAY1 fhr c_sec hypoglycemia i.gest_age seizure mat_inflamm HTN malpresent CPR_proc hypothermia_proc sepsis TRAN_IN, or
+
+note: mat_inflamm != 0 predicts failure perfectly
+      mat_inflamm dropped and 53 obs not used
+
+Iteration 0:   log likelihood = -380.34522  
+Iteration 1:   log likelihood = -360.70695  
+Iteration 2:   log likelihood = -343.43935  
+Iteration 3:   log likelihood = -343.19088  
+Iteration 4:   log likelihood = -343.18899  
+Iteration 5:   log likelihood = -343.18899  
+
+Logistic regression                             Number of obs     =      2,090
+                                                LR chi2(21)       =      74.31
+                                                Prob > chi2       =     0.0000
+Log likelihood = -343.18899                     Pseudo R2         =     0.0977
+
+────────────────────────────┬────────────────────────────────────────────────────────────────
+                       DIED │ Odds Ratio   Std. Err.      z    P>|z|     [95% Conf. Interval]
+────────────────────────────┼────────────────────────────────────────────────────────────────
+                       RACE │
+                     Black  │   1.463318   .4493528     1.24   0.215     .8015924    2.671308
+                  Hispanic  │   .9259377   .3319387    -0.21   0.830     .4586012    1.869512
+                     Other  │   1.061931   .3469638     0.18   0.854     .5597365    2.014692
+                            │
+                     FEMALE │   1.187658   .2619937     0.78   0.436     .7707596    1.830054
+                            │
+                HOSP_REGION │
+                   Midwest  │   .7636191   .2592162    -0.79   0.427     .3925817    1.485332
+                     South  │    .891692   .2730917    -0.37   0.708     .4892422    1.625196
+                      West  │   .5595395   .1934303    -1.68   0.093     .2841674    1.101761
+                            │
+                       PAY1 │
+                   Private  │     1.2623   .3221416     0.91   0.361     .7654809     2.08157
+                     Other  │   2.433152   .8112862     2.67   0.008     1.265765    4.677195
+                            │
+                        fhr │   2.288034   1.344255     1.41   0.159     .7233836    7.236964
+                  c_section │    1.16443   .4047028     0.44   0.661     .5892164    2.301189
+               hypoglycemia │   1.136338   .4843543     0.30   0.764     .4928218    2.620142
+                            │
+                   gest_age │
+late preterm (35-36 weeks)  │   .9977077   .3699193    -0.01   0.995     .4823963    2.063491
+                  postterm  │   .5781006   .4246745    -0.75   0.456     .1369961    2.439488
+                            │
+                    seizure │    1.33991   .3115459     1.26   0.208     .8494942    2.113443
+                mat_inflamm │          1  (omitted)
+                        HTN │   4.397073   2.754158     2.36   0.018     1.288261    15.00803
+                 malpresent │   .2158779   .2245991    -1.47   0.141     .0280944    1.658813
+                   CPR_proc │   6.890076   2.792281     4.76   0.000     3.113616    15.24695
+           hypothermia_proc │   .8916155   .3612067    -0.28   0.777     .4030354    1.972477
+                     sepsis │   1.768775   .4390662     2.30   0.022      1.08737    2.877186
+                    TRAN_IN │   3.940187   1.119095     4.83   0.000     2.258177    6.875047
+                      _cons │   .0148345   .0060321   -10.36   0.000     .0066858    .0329152
+────────────────────────────┴────────────────────────────────────────────────────────────────
+Note: _cons estimates baseline odds.
+</pre>
+<p>Note that the output informs us that the variable pertaining to maternal inflammatory disease was dropped because it perfectly predicted “failure,” (Stata’s way of saying that this covariate actually predicted survival in each case). As each baby with maternal inflammatory disease survived in our dataset, Stata figures this variable is not helpful and drops it from the model.</p>
+<pre class='stata'>. fitstat
+
+Measures of Fit for logit of DIED
+
+Log-Lik Intercept Only:     -380.345     Log-Lik Full Model:         -343.189
+D(2063):                     686.378     LR(21):                       74.312
+                                         Prob > LR:                     0.000
+McFadden's R2:                 0.098     McFadden's Adj R2:             0.027
+Maximum Likelihood R2:         0.035     Cragg &amp; Uhler's R2:            0.114
+McKelvey and Zavoina's R2:     0.203     Efron's R2:                    0.046
+Variance of y*:                4.128     Variance of error:             3.290
+Count R2:                      0.955     Adj Count R2:                 -0.011
+AIC:                           0.354     AIC*n:                       740.378
+BIC:                      -15085.091     BIC':                         86.231
+
+. estat gof
+
+Logistic model for DIED, goodness-of-fit test
+
+       number of observations =      2090
+ number of covariate patterns =      1056
+           Pearson chi2(1034) =      1196.63
+                  Prob > chi2 =         0.0003
+</pre>
+
+<p>The model is statistically significant, with included terms explaining approximately <code>09.8</code>% of the variation in square root of LOS. The goodness of fit test demonstrates that our fit is satisfactory.</p>
+
+<p><strong>Factors Significantly Associated with <em>Increased</em> Mortality</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Factor</th>
+<th>coefficient (odds)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">neonatal CPR</td>
+<td><code>06.8900755</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">“other” insurance type</td>
+<td><code>02.4331523</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">maternal hypertension</td>
+<td><code>04.3970733</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">sepsis</td>
+<td><code>01.7687754</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">transferred in</td>
+<td><code>01.3712282</code></td>
+</tr>
+</tbody>
+</table>
+<p>From this, we see that receiving CPR in that first day of life is associated with greatly increased odds of death. Additionally, underinsured status, maternal hypertension, infant sepsis, and being transferred in from another hospital significantly increased odds of death.</p>
+<h5 id="discussion">Discussion</h5>
+<p>Overall, Hispanic ethnicity, late preterm status, presence of seizures, maternal inflammatory disease (defined as premature rupture of membranes and/or chorioamnionitis), neonatal sepsis, being transferred from another hospital, and receiving therapeutic hypothermia were all significantly associated with longer hospital stays for this cohort of infants with HIE. CPR significantly decreased length of stay, as did delivery by c-section.</p>
+<p>Factors that significantly increased mortality were neonatal CPR, “other” insurance type (medicare, self-pay, or no charge patients), maternal hypertension, transferred in status, and sepsis. Transfer status and its association with increased mortality is an area where future study may be helpful.</p>
+<p>As is always the case, this study has strengths and limitations. The results I obtained are hardly groundbreaking or surprising, but help move the needle in understanding the complex interplay of factors associated with prognosticating, as opposed to diagnosing, HIE in the immediate newborn period. The greatly increased odds of death with neonatal CPR clearly suggest that intrapartum factors (corresponding to the actual delivery process and delivery-room resuscitation for an infant) play a particularly critical role in the prognosis of infants with HIE. The study design benefits from the use of all-payer, HCUP data, which provides capture of a true, representative nationwide sample of infants.</p>
+<p>Limitations of the study include reliance on ICD9 diagnosis and procedure codes, which can be inaccurate. The data did not contain useful patient-level information like APGAR score, cord blood gas results, or Sarnat staging which would have been helpful for understanding short-term outcomes in these patients. Additionally, the nature of HCUP data precluded obtaining long-term results like developmental outcomes for HIE patients.</p>
+<p>My next step for this project will be to include other HCUP years, impute missing values, and to validate my results from this training sample. Once this is finished, I plan on working with my team of investigators at Cleveland Clinic to submit this for an abstract or poster and then ultimately a full manuscript publication.</p>
+</body>
+</html>
