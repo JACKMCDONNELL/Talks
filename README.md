@@ -10,6 +10,6 @@ I'll keep a copy of all major talks I give from now and on in this directory. Th
 
 - a project looking at risk predictors of need for phototherapy in the NICU
 
-- a 1 hour session teaching CCF Pediatric Hospital Medicine Fellows high-yield statistical concepts
+- a worksheet used to help teach CCF Pediatric Hospital Medicine Fellows high-yield statistical concepts
 
 
