@@ -12,4 +12,4 @@ I'll keep a copy of all major talks I give from now and on in this directory. Th
 
 - a worksheet used to help teach CCF Pediatric Hospital Medicine Fellows high-yield statistical concepts
 
-- a talk I gave the dermatology residents on 9JAN2020 at CCF on urticaria/angioedema
+- a talk I gave the dermatology residents at CCF on urticaria/angioedema (9JAN2020)
