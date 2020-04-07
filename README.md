@@ -16,3 +16,6 @@ I'll keep a copy of all major talks I give from now and on in this directory. Th
 
 - a journal club I gave at CCF on epicutaneous peanut immunotherapy (15JAN2020)
 
+- a journal club I gave at CCF on an innate immunity and pollen exposure (7APR2020)
+
+
