@@ -18,4 +18,4 @@ I'll keep a copy of all major talks I give from now and on in this directory. Th
 
 - a journal club I gave at CCF on an innate immunity and pollen exposure (7APR2020)
 
-
+- a Bayesian logistical regression analysis of what makes a good burrito
